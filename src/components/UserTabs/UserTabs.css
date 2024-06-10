@@ -1,17 +1,21 @@
 #tabs {
     width: 100%;
     height: 200px;
-    padding-left: 320px;
+    padding-left: 335px;
 }
 
 .tabs-header {
     padding-bottom: 7px;
     border-bottom: 2px solid #ffffff1e;
+    margin-bottom: 25px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .tabs-header li {
     width: 100%;
     text-align: center;
+    transition: 300ms all;
 }
 
 .tabs-header li button {
@@ -23,6 +27,11 @@
     cursor: pointer;
     border: none;
     color: #ffffff87;
+}
+
+.tabs-header li:hover {
+    background: #ffffff1b;
+    border-radius: 10px;
 }
 
 .tabs-header li.active button {
@@ -43,4 +52,10 @@
     content: "";
     border-radius: 10px;
     background: #07f;
+}
+
+.tabs-item-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
