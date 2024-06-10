@@ -1,5 +1,5 @@
 #header {
-    border-bottom: 1px solid #ffffff27;
+    border-bottom: 1px solid #ffffff11;
     padding: 20px 0;
     position: fixed;
     width: 100%;
@@ -67,6 +67,7 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .mode svg {
