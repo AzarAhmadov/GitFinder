@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import './FollowCards.css'
 
 const FollowCards: FC = () => {
     return (
