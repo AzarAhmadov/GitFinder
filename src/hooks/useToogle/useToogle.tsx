@@ -4,9 +4,9 @@ export const useToogle = (initialState = false) => {
 
     const [toggleValue, setToggleValue] = useState(initialState);
 
-    const toggler = () => { setToggleValue(!toggleValue) };
+    const toggle = () => { setToggleValue(!toggleValue) };
 
     return (
-        [toggleValue, toggler]
+        [toggleValue, toggle]
     )
 }
