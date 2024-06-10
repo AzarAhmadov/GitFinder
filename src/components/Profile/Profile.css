@@ -1,0 +1,72 @@
+#profile {
+    color: #fff;
+    width: 300px;
+    position: fixed;
+    top: 130px;
+}
+
+.user-img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+
+.info .name {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.info .nick-name {
+    margin-bottom: 10px;
+    color: #07f;
+}
+
+.info a {
+    margin: 13px 0 20px;
+    background: #1a263d;
+    color: #07f;
+    padding: 7px 0;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.info a:hover {
+    background: #243657;
+}
+
+.info a svg {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.info .location {
+    margin-bottom: 15px;
+}
+
+.info .location svg {
+    margin-right: 5px;
+}
+
+.info ul {
+    flex-direction: column;
+}
+
+.info ul li {
+    color: #808896;
+}
+
+.info ul li span {
+    color: #fff;
+    margin-right: 10px;
+    font-weight: 500;
+    display: block;
+    width: 20px;
+}
