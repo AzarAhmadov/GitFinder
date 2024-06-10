@@ -2,7 +2,7 @@
     color: #fff;
     width: 300px;
     position: fixed;
-    top: 120px;
+    top: 110px;
     overflow: auto;
 }
 
@@ -11,6 +11,7 @@
     height: 280px;
     border-radius: 50%;
     object-fit: cover;
+    background-color: #1a263d;
 }
 
 .info {
@@ -54,19 +55,20 @@
 .user-links {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 15px;
+    gap: 13px;
+    margin-bottom: 20px;
 }
 
 .user-links li {
     color: #fff;
+    font-size: 14px;
 }
 
 .user-links li svg {
     fill: #fff;
     margin-right: 10px;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 }
 
 .user-links li a {
@@ -79,6 +81,7 @@
 
 .info .user-action li {
     color: #808896;
+    display: flex;
 }
 
 .info .user-action li span {
@@ -86,5 +89,6 @@
     margin-right: 10px;
     font-weight: 500;
     display: block;
-    width: 20px;
+    min-width: 20px;
+
 }
