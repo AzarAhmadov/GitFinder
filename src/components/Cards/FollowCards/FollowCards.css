@@ -1,0 +1,37 @@
+.follow-card {
+    background-color: #1f2a47a1;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.follow-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.follow-card span {
+    color: #fff;
+    font-size: 16px;
+    margin-left: 15px;
+}
+
+.follow-card a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #324578b2;
+    border: 1px solid #27469a2a;
+    transition: 200ms all;
+}
+
+.follow-card a:hover {
+    border: 2px solid #27469a;
+}
+
+.follow-card a svg {
+    color: #fff;
+    width: 20px;
+    height: 20px;
+}
