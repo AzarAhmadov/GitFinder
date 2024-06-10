@@ -1,0 +1,75 @@
+#header {
+    border-bottom: 1px solid #ffffff27;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    background-color: #141d2e;
+    z-index: 1;
+}
+
+#header a {
+    color: #07f;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+#header a span {
+    color: #fff;
+}
+
+#header .form-area {
+    border-radius: 100px;
+    background: #1f2a47;
+    height: 45px;
+    padding: 0 20px;
+    gap: 10px;
+    position: relative;
+}
+
+#header .form-area .search {
+    fill: #fff;
+    width: 22px;
+    height: 22px;
+}
+
+#header .form-area input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    width: 300px;
+    font-weight: normal;
+    outline: none;
+}
+
+#header .form-area button {
+    background: #07f;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    position: absolute;
+    right: 0;
+    border-radius: 30px;
+    padding: 0 20px;
+    height: 45px;
+    top: 0;
+    border: none;
+}
+
+#header .form-area input::placeholder {
+    color: #b7b7b7;
+    font-size: 17px;
+}
+
+.mode {
+    margin-left: 10px;
+    background: #1f2a47;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.mode svg {
+    font-size: 25px;
+    color: #fff;
+}
