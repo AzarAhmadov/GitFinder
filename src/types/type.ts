@@ -24,3 +24,7 @@ export type RepoType = {
     forks_count: number,
     stargazers_count: number
 }
+
+export type ErrorType = {
+    err: string
+}

@@ -3,10 +3,16 @@ import { GithubFollowers } from '../../services/Api';
 import { useQuery } from 'react-query';
 import { User } from '../../types/type';
 import FollowCards from '../Cards/FollowCards/FollowCards';
+import Error from '../Error/ErrorMsg';
+import ErrorMsg from '../Error/ErrorMsg';
 
 const Follow: FC = () => {
 
     const { isLoading: followLoading, data: Followers } = useQuery('githubFollowers', () => GithubFollowers('azarahmadov'));
+
+    if (!Followers || Followers.length === 0) {
+        return <ErrorMsg err='followers' />;
+    }
 
     return (
         <ul className='tabs-item-list'>

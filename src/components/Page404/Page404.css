@@ -1,0 +1,22 @@
+.error {
+    min-height: 100vh;
+}
+
+.error h3 {
+    font-size: 100px;
+    color: #ffffffb0;
+}
+
+.error p {
+    color: #fff;
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+
+.error a {
+    background: #27469a;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+}

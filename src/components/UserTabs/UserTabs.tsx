@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import './UserTabs.css'
 import Follow from '../Follow/Follow';
 import Repo from '../Repo/Repo';
+import Following from '../Following/Following';
 
 const UserTabs: FC = () => {
 
@@ -14,6 +15,7 @@ const UserTabs: FC = () => {
     const RenderTab = () => {
         if (activeTab === 0) return <Repo />
         if (activeTab === 2) return <Follow />
+        if (activeTab === 3) return <Following />
     }
 
     return (

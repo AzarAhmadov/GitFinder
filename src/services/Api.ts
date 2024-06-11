@@ -1,5 +1,4 @@
 // Fetch User
-
 export const GithubUser = async (user: string) => {
     try {
         const res = await fetch(`https://api.github.com/users/${user}`)
@@ -14,6 +13,7 @@ export const GithubUser = async (user: string) => {
     }
 }
 
+// Fetch User Followers
 export const GithubFollowers = async (user: string) => {
     try {
 
@@ -29,6 +29,7 @@ export const GithubFollowers = async (user: string) => {
     }
 }
 
+// Fetch User Repos
 export const GithubRepos = async (user: string) => {
 
     try {
@@ -43,3 +44,18 @@ export const GithubRepos = async (user: string) => {
     }
 
 }
+
+// Fetch User Following
+export const GithubFollowing = async (user: string) => {
+    try {
+        const res = await fetch(`https://api.github.com/users/${user}/following`)
+        if (!res.ok) {
+            throw new Error('Failed to fetch GitHub following data');
+        }
+        const data = await res.json()
+        return data
+    } catch (err) {
+        console.log(err)
+    }
+}
+

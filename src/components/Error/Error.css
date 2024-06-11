@@ -1,0 +1,10 @@
+.errorMsg {
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 30px;
+}
+
+.errorMsg h3 {
+    font-size: 35px;
+}
