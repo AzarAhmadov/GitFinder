@@ -6,81 +6,81 @@ import { RiBuilding2Line } from "react-icons/ri";
 import { SlLocationPin } from "react-icons/sl";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { useQuery } from 'react-query';
-import { GetGithubUser } from '../../services/Api';
+import { GithubUser } from '../../services/Api';
 import { kFormatter } from '../../helper/numberFormat';
 import { User } from '../../types/type';
 
 const Profile: FC = () => {
 
-    const { isLoading, data } = useQuery<User>('githubUser', () => GetGithubUser('azarahmadov'));
+    const { isLoading: userLoading, data: githubUser } = useQuery<User>('githubUser', () => GithubUser('azarahmadov'));
 
     return (
         <section id='profile'>
             <img
                 className='user-img'
-                src={data?.avatar_url}
-                alt={data?.name}
+                src={githubUser?.avatar_url}
+                alt={githubUser?.name}
             />
 
             {
-                isLoading ? <p>loading...</p> :
+                userLoading ? <p>loading...</p> :
                     <div className="info">
                         <span className="name">
-                            {data?.name}
+                            {githubUser?.name}
                         </span>
                         <span className="nick-name">
-                            {data?.login}
+                            {githubUser?.login}
                         </span>
                         <p className='desc'>
-                            {data?.bio}
+                            {githubUser?.bio}
                         </p>
-                        <Link target='_blank' className='github-link flex flex-center' to={`${data?.html_url}`}>
+                        <Link target='_blank' className='github-link flex flex-center' to={`${githubUser?.html_url}`}>
                             <FiGithub />
                             See on Github
                         </Link>
 
                         <ul className='user-links'>
                             {
-                                data?.location &&
+                                githubUser?.location &&
                                 <li className='flex flex-align-center'>
-                                    <SlLocationPin />  {data.location}
+                                    <SlLocationPin />  {githubUser.location}
                                 </li>
                             }
                             {
-                                data?.company &&
+                                githubUser?.company &&
                                 <li className='flex flex-align-center'>
-                                    <RiBuilding2Line />  {data.company}
+                                    <RiBuilding2Line />  {githubUser.company}
                                 </li>
                             }
                             {
-                                data?.blog &&
+                                githubUser?.blog &&
                                 <li className='flex flex-align-center'>
-                                    <FaExternalLinkAlt /> <Link target='_blank' to={`${data.blog}`}> {data.blog}</Link>
+                                    <FaExternalLinkAlt /> <Link target='_blank' to={`${githubUser.blog}`}> {githubUser.blog}</Link>
                                 </li>
                             }
                         </ul>
 
                         <ul className='user-action flex gap-10'>
                             {
-                                data?.public_repos
+                                githubUser?.public_repos
                                 &&
                                 <li className='flex'>
-                                    <span>{data?.public_repos}</span>
+                                    <span>{githubUser?.public_repos}</span>
                                     Repos
                                 </li>
                             }
                             {
-                                data?.followers &&
+                                githubUser?.followers &&
                                 <li className='flex'>
-                                    <span>{kFormatter(data?.followers)}</span>
+                                    <span>{kFormatter(githubUser?.followers)}</span>
                                     Following
                                 </li>
                             }
 
                             {
-                                data?.following &&
+                                githubUser?.following &&
                                 <li className='flex'>
-                                    <span>{data?.following}</span>
+                                    <span>{githubUser?.following}</span>
                                     Following
                                 </li>
                             }
