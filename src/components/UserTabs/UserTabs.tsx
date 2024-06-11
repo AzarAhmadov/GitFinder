@@ -1,7 +1,7 @@
 import { FC, useState } from 'react'
 import './UserTabs.css'
-import FollowCards from '../Cards/FollowCards/FollowCards'
-import RepoCards from '../Cards/RepoCards/RepoCards';
+import Follow from '../Follow/Follow';
+import Repo from '../Repo/Repo';
 
 const UserTabs: FC = () => {
 
@@ -10,6 +10,11 @@ const UserTabs: FC = () => {
     const handleTabClick = (index: number) => {
         setActiveTab(index);
     };
+
+    const RenderTab = () => {
+        if (activeTab === 0) return <Repo />
+        if (activeTab === 2) return <Follow />
+    }
 
     return (
         <section id='tabs'>
@@ -36,22 +41,7 @@ const UserTabs: FC = () => {
                 </li>
             </ul>
 
-            {
-                activeTab === 0 && <ul className='tabs-item-list'>
-                    <li>
-                        <RepoCards />
-                    </li>
-                </ul>
-            }
-
-
-            {
-                activeTab === 1 && <ul className='tabs-item-list'>
-                    <li>
-                        <FollowCards />
-                    </li>
-                </ul>
-            }
+            {RenderTab()}
         </section>
     )
 }
