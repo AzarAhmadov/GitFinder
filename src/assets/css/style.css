@@ -19,5 +19,12 @@ body {
 }
 
 #main {
-    padding: 130px 0 20px;
+    padding: 130px 0 0px;
+}
+
+.tabs-item-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-bottom: 30px;
 }
