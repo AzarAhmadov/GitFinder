@@ -8,6 +8,7 @@
     background-color: #1f2a47a1;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    min-height: 130px;
 }
 
 .link {
@@ -50,8 +51,15 @@
     margin-right: 10px;
 }
 
-.desc-repo {
+.desc-area {
     padding: 20px;
+}
+
+.desc-repo {
     color: #94a0c2;
-    font-size: 15px;
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
