@@ -15,7 +15,6 @@
 .tabs-header li {
     width: 100%;
     text-align: center;
-    transition: 300ms all;
 }
 
 .tabs-header li button {

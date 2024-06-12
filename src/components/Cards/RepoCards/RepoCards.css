@@ -20,6 +20,11 @@
 .link a {
     color: #fff;
     font-size: 18px;
+    transition: 200ms all;
+}
+
+.link a:hover {
+    color: #07f;
 }
 
 .link .status {

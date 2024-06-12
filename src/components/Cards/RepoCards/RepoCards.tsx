@@ -12,14 +12,16 @@ interface IRepo {
 
 const RepoCards: FC<IRepo> = ({ el }) => {
 
-    const { name, visibility, language, description, forks_count, stargazers_count
+    const { name, visibility, language, description, forks_count, stargazers_count, full_name
     } = el
+
+    console.log(el)
 
     return (
         <div className='repo-cards'>
             <div className="cards-top">
                 <div className='link flex flex-between flex-align-center'>
-                    <Link to={''}>
+                    <Link target='_blank' to={`https://github.com/${full_name}`}>
                         {name}
                     </Link>
                     <span className="status">

@@ -73,6 +73,11 @@
 
 .user-links li a {
     color: #fff;
+    transition: 300ms all;
+}
+
+.user-links li a:hover {
+    color: #07f;
 }
 
 .info .user-action {
@@ -90,5 +95,4 @@
     font-weight: 500;
     display: block;
     min-width: 20px;
-
 }
