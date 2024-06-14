@@ -1,5 +1,6 @@
 .error {
     min-height: 100vh;
+    padding: 0 10px;
 }
 
 .error h3 {
@@ -20,4 +21,19 @@
     padding: 10px 20px;
     border-radius: 10px;
     font-size: 20px;
+}
+
+@media only screen and (max-width:578px) {
+    .error h3 {
+        font-size: 80px;
+    }
+
+    .error p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .error a {
+        font-size: 20px;
+    }
 }

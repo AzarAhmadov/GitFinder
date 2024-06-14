@@ -26,10 +26,6 @@ const Profile: FC = () => {
         }
     );
 
-    if (githubUser === undefined) {
-        window.location.href = '/Error'
-    }
-
     return (
         <section id='profile'>
             <img
