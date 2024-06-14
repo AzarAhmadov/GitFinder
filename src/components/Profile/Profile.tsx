@@ -48,15 +48,12 @@ const Profile: FC = () => {
             {
                 userLoading ? <Loading /> :
                     <div className="info">
-                        <span className="name">
-                            {githubUser?.name}
-                        </span>
-                        <span className="nick-name">
-                            {githubUser?.login}
-                        </span>
-                        <p className='desc'>
-                            {githubUser?.bio}
-                        </p>
+
+                        {githubUser?.name && <span className="name">  {githubUser?.name} </span>}
+
+                        {githubUser?.login && <span className="nick-name"> {githubUser?.login} </span>}
+
+                        {githubUser?.bio && <p className='desc'> {githubUser?.bio} </p>}
 
                         {githubUser?.html_url && <Link target='_blank' className='github-link flex flex-center' to={`${githubUser?.html_url}`}>
                             <FiGithub />
@@ -86,28 +83,24 @@ const Profile: FC = () => {
 
                         <ul className='user-action flex gap-10'>
                             {
-                                githubUser?.public_repos
-                                &&
+
                                 <li className='flex'>
                                     <span>{githubUser?.public_repos}</span>
                                     Repos
                                 </li>
                             }
                             {
-                                githubUser?.followers &&
+
                                 <li className='flex'>
                                     <span>{kFormatter(githubUser?.followers)}</span>
                                     Following
                                 </li>
                             }
 
-                            {
-                                githubUser?.following &&
-                                <li className='flex'>
-                                    <span>{githubUser?.following}</span>
-                                    Following
-                                </li>
-                            }
+                            <li className='flex'>
+                                <span>{githubUser?.following}</span>
+                                Following
+                            </li>
                         </ul>
                     </div>
             }
