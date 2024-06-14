@@ -11,7 +11,6 @@ import { kFormatter } from '../../helper/numberFormat';
 import { User } from '../../types/type';
 import { SearchContext } from '../../services/context/context';
 import Loading from '../Loading/Loading';
-
 const Profile: FC = () => {
 
     const { search } = useContext<any>(SearchContext);
@@ -27,12 +26,16 @@ const Profile: FC = () => {
         }
     );
 
+    if (githubUser === undefined) {
+        window.location.href = '/Error'
+    }
+
     return (
         <section id='profile'>
             <img
                 className='user-img'
-                src={githubUser ? githubUser?.avatar_url : 'https://avatars.githubusercontent.com/u/9919?s=280&v=4'}
                 alt={githubUser?.name}
+                src={githubUser ? githubUser?.avatar_url : 'https://www.icegif.com/wp-content/uploads/2023/07/icegif-1259.gif'}
             />
 
             {

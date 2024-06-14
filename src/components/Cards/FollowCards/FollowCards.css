@@ -35,3 +35,24 @@
     width: 20px;
     height: 20px;
 }
+
+@media only screen and (max-width:578px) {
+    .follow-card img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .follow-card span {
+        font-size: 15px;
+    }   
+}
+
+@media (prefers-color-scheme: light) {
+    .follow-card {
+        background-color: #ECF0F1;
+    }
+
+    .follow-card span {
+        color: #000 !important;
+    }
+}

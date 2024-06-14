@@ -3,7 +3,6 @@
     width: 300px;
     position: fixed;
     top: 110px;
-    overflow: auto;
 }
 
 .user-img {
@@ -23,6 +22,7 @@
 .info .name {
     font-size: 24px;
     font-weight: 600;
+    color: #fff;
 }
 
 .info .nick-name {
@@ -95,4 +95,65 @@
     font-weight: 500;
     display: block;
     min-width: 20px;
+}
+
+@media only screen and (max-width:768px) {
+    #profile {
+        position: relative;
+        width: 100%;
+        top: 0;
+        padding-top: 35px;
+    }
+
+    .user-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .info .name {
+        font-size: 20px;
+    }
+
+    .info {
+        font-size: 15px;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .user-img {
+        background-color: #f1eeee;
+    }
+
+    .info .name {
+        color: #000;
+    }
+
+    .info .user-action li {
+        color: #000;
+    }
+
+    .user-links li a {
+        color: #000;
+    }
+
+    .info .github-link {
+        background: #1a263d;
+        color: #fff;
+    }
+
+    .user-links li {
+        color: #000;
+    }
+
+    .info .user-action li span {
+        color: #000;
+    }
+
+    .user-links li svg {
+        fill: #000;
+    }
+
+    .info {
+        color: #000;
+    }
 }

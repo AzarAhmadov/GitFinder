@@ -15,7 +15,9 @@ const FollowCards: FC<IUser> = ({ el }) => {
     return (
         <div className='follow-card flex flex-align-center flex-between'>
             <div className='flex flex-align-center'>
-                <img src={avatar_url} alt={login} />
+                <img
+                    alt={login}
+                    src={avatar_url} />
                 <span>
                     {login}
                 </span>

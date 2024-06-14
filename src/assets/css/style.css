@@ -17,6 +17,14 @@ body {
     background-color: #141d2e;
 }
 
+@media (prefers-color-scheme: light) {
+
+    html,
+    body {
+        background-color: #fff;
+    }
+}
+
 #main {
     padding: 130px 0 0px;
 }
@@ -26,4 +34,10 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding-bottom: 30px;
+}
+
+@media only screen and (max-width:992px) {
+    .tabs-item-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

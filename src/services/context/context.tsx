@@ -12,8 +12,13 @@ export const SearchProvider = ({ children }: ContainerType) => {
 
     const [search, setSearch] = useState<string>('azarahmadov');
 
+    const values = {
+        search,
+        setSearch
+    }
+
     return (
-        <SearchContext.Provider value={{ search, setSearch }}>
+        <SearchContext.Provider value={values}>
             {children}
         </SearchContext.Provider>
     );

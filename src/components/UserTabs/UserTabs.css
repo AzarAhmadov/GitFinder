@@ -8,8 +8,6 @@
     padding-bottom: 7px;
     border-bottom: 2px solid #ffffff1e;
     margin-bottom: 25px;
-    padding-left: 0;
-    padding-right: 0;
 }
 
 .tabs-header li {
@@ -51,4 +49,29 @@
     content: "";
     border-radius: 10px;
     background: #07f;
+}
+
+@media (prefers-color-scheme: light) {
+    #tabs .tabs-header li button {
+        color: #0000007f;
+    }
+
+    #tabs .tabs-header li.active button {
+        color: #000;
+    }
+
+
+    .tabs-header {
+        border-bottom: 2px solid #0000001a;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    #tabs {
+        padding-left: 0px;
+    }
+
+    .tabs-header li button {
+        font-size: 16px;
+    }
 }

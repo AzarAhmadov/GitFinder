@@ -5,6 +5,7 @@ import FollowCards from '../Cards/FollowCards/FollowCards';
 import { SearchContext } from '../../services/context/context';
 import Loading from '../Loading/Loading';
 import { User } from '../../types/type';
+import ErrorMsg from '../Error/ErrorMsg';
 
 const Following: FC = () => {
 
@@ -20,6 +21,8 @@ const Following: FC = () => {
             refetchInterval: 0,
         }
     );
+
+    if (Following && Following.length === 0) return <ErrorMsg err='Following' />
 
     return (
         <>

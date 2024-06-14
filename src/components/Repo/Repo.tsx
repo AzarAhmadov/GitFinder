@@ -5,6 +5,7 @@ import RepoCards from '../Cards/RepoCards/RepoCards';
 import { RepoType } from '../../types/type';
 import { SearchContext } from '../../services/context/context';
 import Loading from '../Loading/Loading';
+import ErrorMsg from '../Error/ErrorMsg';
 
 const Repo: FC = () => {
 
@@ -20,6 +21,8 @@ const Repo: FC = () => {
             refetchInterval: 0,
         }
     );
+
+    if (Repos && Repos.length === 0) return <ErrorMsg err='repositories' />
 
     return (
         <>
