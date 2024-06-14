@@ -15,8 +15,6 @@ const RepoCards: FC<IRepo> = ({ el }) => {
     const { name, visibility, language, description, forks_count, stargazers_count, full_name
     } = el
 
-    console.log(el)
-
     return (
         <div className='repo-cards'>
             <div className="cards-top">

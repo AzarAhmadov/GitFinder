@@ -1,11 +1,21 @@
-import { FC } from 'react'
+import { FC, FormEvent, useContext, useRef } from 'react'
 import Container from '../Container/Container'
 import { Link } from 'react-router-dom'
 import { IoSunnyOutline } from "react-icons/io5";
 import { IoIosSearch } from "react-icons/io";
 import './header.css'
+import { SearchContext } from '../../services/context/context';
 
 const Header: FC = () => {
+
+    const { setSearch } = useContext<any>(SearchContext);
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    const FormSubmit = (e: FormEvent) => {
+        setSearch(inputRef.current?.value)
+        e.preventDefault();
+    };
+
     return (
         <header id='header'>
             <Container>
@@ -17,9 +27,13 @@ const Header: FC = () => {
                     <div className='flex flex-align-center'>
                         <div className="form-area flex flex-align-center">
                             <IoIosSearch className='search' />
-                            <form>
-                                <input type="text" placeholder='Search username' />
-                                <button> Search </button>
+                            <form onSubmit={FormSubmit}>
+                                <input
+                                    ref={inputRef}
+                                    type="text"
+                                    placeholder='Search username'
+                                />
+                                <button type='submit'>Search</button>
                             </form>
                         </div>
                         <div className="mode flex flex-center">

@@ -39,6 +39,7 @@
     font-size: 17px;
     width: 300px;
     font-weight: normal;
+    padding-right: 80px;
     outline: none;
 }
 
@@ -54,6 +55,7 @@
     height: 45px;
     top: 0;
     border: none;
+    cursor: pointer;
 }
 
 #header .form-area input::placeholder {

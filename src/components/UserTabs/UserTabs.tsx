@@ -14,8 +14,8 @@ const UserTabs: FC = () => {
 
     const RenderTab = () => {
         if (activeTab === 0) return <Repo />
-        if (activeTab === 2) return <Follow />
-        if (activeTab === 3) return <Following />
+        if (activeTab === 1) return <Follow />
+        if (activeTab === 2) return <Following />
     }
 
     return (
@@ -28,15 +28,10 @@ const UserTabs: FC = () => {
                 </li>
                 <li onClick={() => handleTabClick(1)} className={activeTab === 1 ? 'active' : ''}>
                     <button>
-                        Forked
-                    </button>
-                </li>
-                <li onClick={() => handleTabClick(2)} className={activeTab === 2 ? 'active' : ''}>
-                    <button>
                         Followers
                     </button>
                 </li>
-                <li onClick={() => handleTabClick(3)} className={activeTab === 3 ? 'active' : ''}>
+                <li onClick={() => handleTabClick(2)} className={activeTab === 2 ? 'active' : ''}>
                     <button>
                         Following
                     </button>

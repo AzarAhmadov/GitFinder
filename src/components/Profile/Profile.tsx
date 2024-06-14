@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useContext } from 'react'
 import './Profile.css'
 import { Link } from 'react-router-dom'
 import { FiGithub } from "react-icons/fi";
@@ -9,21 +9,34 @@ import { useQuery } from 'react-query';
 import { GithubUser } from '../../services/Api';
 import { kFormatter } from '../../helper/numberFormat';
 import { User } from '../../types/type';
+import { SearchContext } from '../../services/context/context';
+import Loading from '../Loading/Loading';
 
 const Profile: FC = () => {
 
-    const { isLoading: userLoading, data: githubUser } = useQuery<User>('githubUser', () => GithubUser('azarahmadov'));
+    const { search } = useContext<any>(SearchContext);
+
+    const { isLoading: userLoading, data: githubUser } = useQuery<User>(
+        ['githubUser', search],
+        () => GithubUser(search),
+        {
+            refetchOnWindowFocus: true,
+            staleTime: 0,
+            cacheTime: 0,
+            refetchInterval: 0,
+        }
+    );
 
     return (
         <section id='profile'>
             <img
                 className='user-img'
-                src={githubUser?.avatar_url}
+                src={githubUser ? githubUser?.avatar_url : 'https://avatars.githubusercontent.com/u/9919?s=280&v=4'}
                 alt={githubUser?.name}
             />
 
             {
-                userLoading ? <p>loading...</p> :
+                userLoading ? <Loading /> :
                     <div className="info">
                         <span className="name">
                             {githubUser?.name}
@@ -34,10 +47,11 @@ const Profile: FC = () => {
                         <p className='desc'>
                             {githubUser?.bio}
                         </p>
-                        <Link target='_blank' className='github-link flex flex-center' to={`${githubUser?.html_url}`}>
+
+                        {githubUser?.html_url && <Link target='_blank' className='github-link flex flex-center' to={`${githubUser?.html_url}`}>
                             <FiGithub />
                             See on Github
-                        </Link>
+                        </Link>}
 
                         <ul className='user-links'>
                             {
