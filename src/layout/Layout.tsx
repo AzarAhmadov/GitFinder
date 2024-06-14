@@ -22,15 +22,13 @@ const Layout: FC = () => {
         }
     );
 
-    if (githubUser === undefined)
+    if (githubUser && githubUser === undefined)
         return (
             <>
                 <Header />
                 <Page404 />
             </>
         )
-
-
 
     return (
         <>
