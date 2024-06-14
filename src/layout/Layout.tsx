@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react'
+import { useContext } from 'react'
 import Header from '../common/Header/Header'
 import { Outlet } from 'react-router-dom'
 import { useQuery } from 'react-query';
@@ -7,7 +7,7 @@ import { User } from '../types/type';
 import { SearchContext } from '../services/context/context';
 import Page404 from '../components/Page404/Page404';
 
-const Layout: FC = () => {
+const Layout = () => {
 
     const { search } = useContext<any>(SearchContext);
 
@@ -24,10 +24,12 @@ const Layout: FC = () => {
 
     if (githubUser === undefined)
         return (
-            <>
-                <Header />
-                <Page404 />
-            </>
+            setTimeout(() => (
+                <>
+                    <Header />
+                    <Page404 />
+                </>
+            ), 100)
         )
 
     return (
