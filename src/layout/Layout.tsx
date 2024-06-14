@@ -24,13 +24,12 @@ const Layout = () => {
 
     if (githubUser === undefined)
         return (
-            setTimeout(() => (
-                <>
-                    <Header />
-                    <Page404 />
-                </>
-            ), 100)
+            <>
+                <Header />
+                <Page404 />
+            </>
         )
+
 
     return (
         <>
