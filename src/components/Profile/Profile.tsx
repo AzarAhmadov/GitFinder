@@ -11,6 +11,9 @@ import { kFormatter } from '../../helper/numberFormat';
 import { User } from '../../types/type';
 import { SearchContext } from '../../services/context/context';
 import Loading from '../Loading/Loading';
+import Page404 from '../Page404/Page404';
+import Header from '../../common/Header/Header';
+
 const Profile: FC = () => {
 
     const { search } = useContext<any>(SearchContext);
@@ -25,6 +28,14 @@ const Profile: FC = () => {
             refetchInterval: 0,
         }
     );
+
+    if (githubUser === undefined)
+        return (
+            <>
+                <Header />
+                <Page404 />
+            </>
+        )
 
     return (
         <section id='profile'>

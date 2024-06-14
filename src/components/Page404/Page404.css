@@ -37,3 +37,13 @@
         font-size: 20px;
     }
 }
+
+@media (prefers-color-scheme: light) {
+    .error h3 {
+        color: #000;
+    }
+    
+    .error p {
+        color: #000;
+    }
+}

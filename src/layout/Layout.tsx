@@ -22,7 +22,7 @@ const Layout: FC = () => {
         }
     );
 
-    if (githubUser && githubUser === undefined)
+    if (githubUser === undefined)
         return (
             <>
                 <Header />
