@@ -9,7 +9,7 @@ import Page404 from "../components/Page404/Page404";
 const Layout = () => {
   const { search } = useContext<any>(SearchContext);
 
-  const { isError, data: githubUser } = useQuery<User>(
+  const { isError } = useQuery<User>(
     ["githubUser", search],
     () => GithubUser(search),
     {
@@ -20,14 +20,12 @@ const Layout = () => {
     }
   );
 
-  if (isError || !githubUser) return <Page404 />;
+  if (isError) return <Page404 />;
 
   return (
-    <>
-      <main id="main">
-        <Outlet />
-      </main>
-    </>
+    <main id="main">
+      <Outlet />
+    </main>
   );
 };
 
